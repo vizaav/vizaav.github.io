@@ -3,8 +3,8 @@
 # Personal Website
 
 This is the repository for my personal website, hosted on GitHub Pages at [vizaav.github.io](https://vizaav.github.io/).
-![pageview](images\for_documentation\page.png)
 
+![pageview](images/for_documentation/page.png)
 
 ## Technologies Used
 
@@ -32,15 +32,13 @@ npm run dev
 This will start a local development server.
 
 ## Building
+
 To build the project for production, use the following command:
+
 ```bash
 npm run build
 ```
 
 This will create a dist/ directory with the built files.
 
-![figma](images\for_documentation\figma.png)
-
-
-
-
+![figma](images/for_documentation/figma.png)
