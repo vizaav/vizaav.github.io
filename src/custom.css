@@ -233,9 +233,9 @@ h3 {
 }
 
 .footer {
-  background-color: #ffb1a4;
+  background-color: #023f92;
   color: white;
-  @apply py-5 px-0 w-screen place-items-center place-content-center;
+  @apply py-1 px-0 w-screen place-items-center place-content-center;
 }
 
 .container {
