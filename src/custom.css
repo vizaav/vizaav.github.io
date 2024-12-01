@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  overflow-x: hidden;
+
   /* height: 100vh; */
 
   position: relative;
@@ -25,6 +25,14 @@ body {
 html {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  overflow-x: hidden;
+}
+
+.background {
+  width: 100%;
+}
+.introduction {
+  display: flex;
 }
 h1 {
   /* padding-top: 400px; */
@@ -38,12 +46,6 @@ h1 {
   text-transform: uppercase;
 }
 
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 10vmin;
-  }
-}
-
 h2 {
   color: white;
   font-size: 5vmin;
@@ -52,12 +54,6 @@ h2 {
   letter-spacing: 2px;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  h2 {
-    margin-top: 10px;
-  }
 }
 
 h3 {
@@ -85,11 +81,6 @@ h3 {
   @apply py-10;
 }
 
-@media (max-width: 1200px) {
-  .grid-text {
-    width: 50vw;
-  }
-}
 .blob {
   position: absolute;
   top: 0;
@@ -133,6 +124,78 @@ h3 {
   animation: move4 60s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
+
+.filter {
+  filter: blur(3.5px);
+}
+
+/* rest of the content */
+
+.first-viewheight {
+  @apply h-screen;
+}
+
+.content {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  @apply py-8 w-screen;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-module {
+  background-color: #023f92;
+  color: white;
+}
+
+.footer {
+  background-color: #023f92;
+  color: white;
+  @apply py-1 px-0 w-screen place-items-center place-content-center;
+}
+
+.container {
+  display: grid;
+  column-gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* display: flex; */
+  max-width: 1600px;
+  /* justify-content: space-around; */
+  margin: 150px auto 0;
+
+  /* @apply grid grid-cols-3 place-items-center gap-16 pt-4  mb-6; */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  margin-bottom: 60px;
+}
+/* contact module */
+
+.contact-module {
+  background-color: white;
+  color: black;
+}
+
+.first-grid {
+  @apply grid grid-cols-2 place-items-center;
+  min-height: 80vh;
+}
+.third-grid {
+  @apply grid grid-cols-3 place-items-center items-start;
+}
+.cv {
+  @apply w-3/4 h-3/4 hover:scale-105 transition duration-[400ms] ease-in-out cursor-pointer;
+}
+
 @keyframes move {
   0% {
     transform: scale(1) translate(200px, -60px);
@@ -211,60 +274,34 @@ h3 {
     transform: scale(1) translate(10px, -30px);
   }
 }
-.filter {
-  filter: blur(3.5px);
-}
-
-/* rest of the content */
-
-.first-viewheight {
-  @apply h-screen;
-}
-
-.content {
-  background-color: white;
-  color: black;
-  @apply py-8 w-screen;
-}
-
-.projects-module {
-  background-color: #023f92;
-  color: white;
-}
-
-.footer {
-  background-color: #023f92;
-  color: white;
-  @apply py-1 px-0 w-screen place-items-center place-content-center;
-}
-
-.container {
-  grid-auto-rows: 1fr;
-  grid-auto-columns: 1fr;
-  width: 100%;
-  @apply grid grid-cols-3 place-items-center gap-16 pt-4  mb-6;
-}
 
 @media (max-width: 1200px) {
-  .container {
+  /* .container {
     @apply grid-cols-1 place-items-center gap-0 pt-0  mb-0;
+  } */
+  h1 {
+    font-size: 10vmin;
   }
-}
-
-/* contact module */
-
-.contact-module {
-  background-color: white;
-  color: black;
-}
-
-.first-grid {
-  @apply grid grid-cols-2 place-items-center;
+  @media (max-width: 1200px) {
+    .grid-text {
+      width: 50vw;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
   .first-grid {
     @apply grid-cols-1;
+  }
+
+  .cv {
+    @apply flex justify-center;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    margin-top: 10px;
   }
 }
 
@@ -277,15 +314,41 @@ h3 {
   }
 } */
 
-.third-grid {
-  @apply grid grid-cols-3 place-items-center items-start;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
 }
-.cv {
-  @apply w-3/4 h-3/4 hover:scale-105 transition duration-[400ms] ease-in-out cursor-pointer;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 
-@media screen and (max-width: 768px) {
-  .cv {
-    @apply flex justify-center;
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin-bottom: 0;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    place-items: center;
+    gap: 0px;
+    padding-top: 0;
   }
 }
